@@ -53,10 +53,10 @@ Before use, configure your investment profile in `config.json`:
 
 Create two monitoring tasks:
 
-**Daily Briefing (3 times daily: Open, Mid-session, Close)**
+**Daily Briefing (1 daily)**
 ```
 Generate market briefing:
-1. Get price trends for the past 6 hours
+1. Get price trends for the past 24 hours
 2. Check US Dollar Index movement
 3. Review Fed officials' speeches/economic data releases
 4. Provide position holding advice and risk management
@@ -135,35 +135,20 @@ Generate weekly outlook:
 ## Investment Strategy Guide
 
 ### Buy Signals
-1. Price retraces to important support levels (400 CNY/g, 380 CNY/g)
-2. US Dollar Index weakens (DXY<100)
-3. Federal Reserve rate cut expectations rise
-4. Geopolitical risks escalate
-5. Technical breakout (breaks consolidation range)
+1. Federal Reserve rate cut expectations rise
+2. Geopolitical risks escalate
+3. Technical breakout (breaks consolidation range)
 
 ### Sell Signals
-1. Price rises to target profit levels (600 CNY/g, 550 CNY/g)
-2. US Dollar Index strengthens (DXY>105)
-3. Federal Reserve rate hike expectations rise
-4. Technical breakdown (breaks support level)
-5. Position reaches expected profit (take profit)
-
-### Position Management
-| Price Range | Position Recommendation | Action |
-|-------------|------------------------|--------|
-| <380 | Heavy (80%) | Scale-in buying |
-| 380-400 | Medium (50%) | Buy on dips |
-| 400-450 | Light (30%) | Wait and see |
-| 450-500 | Light (20%) | Reduce position |
-| >550 | Close/Short | Gradual selling |
+1. Federal Reserve rate hike expectations rise
+2. Technical breakdown (breaks support level)
+3. Position reaches expected profit (take profit)
 
 ## Data Sources
 
 ### Official Data (Priority)
 - Shanghai Gold Exchange (SGE)
-- London Bullion Market Association (LBMA)
 - World Gold Council (WGC)
-- Central bank gold reserve data
 
 ### Market Data
 - Bloomberg/Reuters Gold Prices
@@ -175,15 +160,12 @@ Generate weekly outlook:
 - Federal Reserve interest rate decisions, meeting minutes
 - Non-farm payroll data
 - CPI/PPI inflation data
-- US Dollar Index (DXY)
-- Treasury yields
-- VIX Volatility Index
+- TWITER/X most recent post
 
 ### Geopolitics & Sentiment
 - Geopolitical conflict news
 - Central bank gold purchase/sale news
 - Major institution research reports (Goldman Sachs, JPMorgan, etc.)
-- Social media sentiment monitoring
 
 ## Customization
 

@@ -3,19 +3,19 @@ name: gold-intel-monitor
 description: Real-time gold price monitoring and investment decision support system. Used for tracking gold price fluctuations, market trend analysis, and investment timing alerts. Supports customizable price alerts, technical indicator monitoring, and macroeconomic data tracking to help investors make timely trading decisions.
 ---
 
-# 🥇 Gold Intelligence Monitor
+# Gold Intelligence Monitor
 
-Real-time gold price monitoring and investment alert system. 📈💰
+Real-time gold price monitoring and investment alert system.
 
-## ✨ Features
+## Features
 
-- **📊 Real-time Price Tracking** - Monitor international gold prices (XAU/USD) and gold denominated in major currencies
-- **🔔 Multi-level Alert System** - Price breakouts, technical indicator signals, major economic events
-- **📈 Technical Analysis Support** - Key price levels, trend lines, support and resistance monitoring
-- **🌍 Macroeconomic Linkage** - Federal Reserve policy, US Dollar Index, geopolitical impacts on gold prices
-- **🎯 Investment Decision Support** - Buy/sell recommendations, position management tips
+- **Real-time Price Tracking** - Monitor international gold prices (XAU/USD) and gold denominated in major currencies
+- **Multi-level Alert System** - Price breakouts, technical indicator signals, major economic events
+- **Technical Analysis Support** - Key price levels, trend lines, support and resistance monitoring
+- **Macroeconomic Linkage** - Federal Reserve policy, US Dollar Index, geopolitical impacts on gold prices
+- **Investment Decision Support** - Buy/sell recommendations, position management tips
 
-## ⚙️ Setup
+## Setup
 
 Before use, configure your investment profile in `config.json`:
 
@@ -47,16 +47,16 @@ Before use, configure your investment profile in `config.json`:
 }
 ```
 
-## 📡 Monitoring Workflow
+## Monitoring Workflow
 
-### 1️⃣ Set Up Scheduled Tasks
+### 1. Set Up Scheduled Tasks
 
 Create two monitoring tasks:
 
-**Daily Briefing (3 times daily: Open, Mid-session, Close)**
+**Daily Briefing (1 daily)**
 ```
 Generate market briefing:
-1. Get price trends for the past 6 hours
+1. Get price trends for the past 24 hours
 2. Check US Dollar Index movement
 3. Review Fed officials' speeches/economic data releases
 4. Provide position holding advice and risk management
@@ -71,7 +71,7 @@ Generate weekly outlook:
 4. Next week's trading strategy recommendations
 ```
 
-### 2️⃣ Alert Levels
+### 2. Alert Levels
 
 | Level | Trigger Conditions | Response |
 |-------|-------------------|----------|
@@ -79,7 +79,7 @@ Generate weekly outlook:
 | 🟡 Yellow | Price breaks key round numbers, technical divergence, Fed officials' speeches | Prepare to trade, closely monitor |
 | 🟢 Green | Normal price fluctuations, routine market monitoring | Regular briefings |
 
-### 3️⃣ Alert Template
+### 3. Alert Template
 
 ```
 🚨 [Alert Level] {Alert Type}
@@ -102,7 +102,7 @@ Generate weekly outlook:
 - Major Events: {event}
 ```
 
-### 4️⃣ Briefing Template
+### 4. Briefing Template
 
 ```
 📋 Gold Market Briefing - {Date}
@@ -132,60 +132,42 @@ Generate weekly outlook:
 {Risk Description}
 ```
 
-## 📚 Investment Strategy Guide
+## Investment Strategy Guide
 
-### 🟢 Buy Signals
-1. Price retraces to important support levels (400 CNY/g, 380 CNY/g)
-2. US Dollar Index weakens (DXY<100)
-3. Federal Reserve rate cut expectations rise
-4. Geopolitical risks escalate
-5. Technical breakout (breaks consolidation range)
+### Buy Signals
+1. Federal Reserve rate cut expectations rise
+2. Geopolitical risks escalate
+3. Technical breakout (breaks consolidation range)
 
-### 🔴 Sell Signals
-1. Price rises to target profit levels (600 CNY/g, 550 CNY/g)
-2. US Dollar Index strengthens (DXY>105)
-3. Federal Reserve rate hike expectations rise
-4. Technical breakdown (breaks support level)
-5. Position reaches expected profit (take profit)
+### Sell Signals
+1. Federal Reserve rate hike expectations rise
+2. Technical breakdown (breaks support level)
+3. Position reaches expected profit (take profit)
 
-### 📊 Position Management
-| Price Range | Position Recommendation | Action |
-|-------------|------------------------|--------|
-| <380 | Heavy (80%) | Scale-in buying |
-| 380-400 | Medium (50%) | Buy on dips |
-| 400-450 | Light (30%) | Wait and see |
-| 450-500 | Light (20%) | Reduce position |
-| >550 | Close/Short | Gradual selling |
+## Data Sources
 
-## 📖 Data Sources
-
-### 🏛️ Official Data (Priority)
+### Official Data (Priority)
 - Shanghai Gold Exchange (SGE)
-- London Bullion Market Association (LBMA)
 - World Gold Council (WGC)
-- Central bank gold reserve data
 
-### 📈 Market Data
+### Market Data
 - Bloomberg/Reuters Gold Prices
 - TradingView Technical Analysis
 - Kitco Gold News
 - Major bank gold quotes
 
-### 🌍 Macro Indicators
+### Macro Indicators
 - Federal Reserve interest rate decisions, meeting minutes
 - Non-farm payroll data
 - CPI/PPI inflation data
-- US Dollar Index (DXY)
-- Treasury yields
-- VIX Volatility Index
+- TWITER/X most recent post
 
-### 🔥 Geopolitics & Sentiment
+### Geopolitics & Sentiment
 - Geopolitical conflict news
 - Central bank gold purchase/sale news
 - Major institution research reports (Goldman Sachs, JPMorgan, etc.)
-- Social media sentiment monitoring
 
-## 🎨 Customization
+## Customization
 
 Edit `config.json` to customize:
 - Holding cost and target price levels
@@ -194,6 +176,6 @@ Edit `config.json` to customize:
 - Key price level settings
 - Local timezone and currency
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This system is for reference only and does not constitute investment advice. Gold investment involves risks; invest with caution. Please make investment decisions based on your own risk tolerance.
