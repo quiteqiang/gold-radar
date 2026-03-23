@@ -153,7 +153,3 @@ Edit `config.json` to customize:
 - Gold instruments to monitor (spot, futures, ETFs)
 - Key price level settings
 - Local timezone and currency
-
-## Disclaimer
-
-This system is for reference only and does not constitute investment advice. Gold investment involves risks; invest with caution. Please make investment decisions based on your own risk tolerance.
