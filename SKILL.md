@@ -11,7 +11,6 @@ Real-time gold price monitoring and investment alert system.
 
 - **Real-time Price Tracking** - Monitor international gold prices (XAU/USD) and gold denominated in major currencies
 - **Multi-level Alert System** - Price breakouts, technical indicator signals, major economic events
-- **Technical Analysis Support** - Key price levels, trend lines, support and resistance monitoring
 - **Macroeconomic Linkage** - Federal Reserve policy, US Dollar Index, geopolitical impacts on gold prices
 - **Investment Decision Support** - Buy/sell recommendations, position management tips
 
@@ -26,23 +25,9 @@ Before use, configure your investment profile in `config.json`:
     "currency": "CNY",
     "timezone": "Asia/Shanghai"
   },
-  "investment_params": {
-    "holding_cost": 450.00,
-    "target_profit": 600.00,
-    "stop_loss": 380.00,
-    "position_size": "10 grams"
-  },
-  "alert_thresholds": {
-    "price_change_pct": 2.0,
-    "daily_high_low": true,
-    "key_levels": [380, 400, 450, 500, 550]
-  },
   "watchlist": [
     {"symbol": "XAUUSD", "name": "Spot Gold", "priority": 1},
-    {"symbol": "SHAU", "name": "Shanghai Gold T+D", "priority": 1},
-    {"symbol": "GLD", "name": "SPDR Gold ETF", "priority": 2},
-    {"symbol": "DXY", "name": "US Dollar Index", "priority": 2},
-    {"symbol": "US10Y", "name": "US 10Y Treasury Yield", "priority": 3}
+    {"symbol": "US10Y", "name": "US 10Y Treasury Yield", "priority": 2}
   ]
 }
 ```
@@ -75,7 +60,7 @@ Generate weekly outlook:
 
 | Level | Trigger Conditions | Response |
 |-------|-------------------|----------|
-| 🔴 Red | Price breaks target profit/stop-loss levels, daily movement >3%, major geopolitical conflicts | Immediate notification, execute trading decisions |
+| 🔴 Red | Price breaks target profit/stop-loss levels, daily movement >8%, major geopolitical conflicts | Immediate notification, execute trading decisions |
 | 🟡 Yellow | Price breaks key round numbers, technical divergence, Fed officials' speeches | Prepare to trade, closely monitor |
 | 🟢 Green | Normal price fluctuations, routine market monitoring | Regular briefings |
 
