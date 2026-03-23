@@ -1,0 +1,40 @@
+{
+  "user_profile": {
+    "name": "投资者",
+    "currency": "CNY",
+    "timezone": "Asia/Shanghai"
+  },
+  "investment_params": {
+    "holding_cost": 450.00,
+    "target_profit": 600.00,
+    "stop_loss": 380.00,
+    "position_size": "10克",
+    "investment_style": "中长期持有"
+  },
+  "alert_thresholds": {
+    "price_change_pct": 2.0,
+    "price_change_pct_red": 3.0,
+    "daily_high_low": true,
+    "key_levels": [380, 400, 450, 500, 550, 600],
+    "moving_averages": ["MA20", "MA60", "MA120"]
+  },
+  "watchlist": [
+    {"symbol": "XAUUSD", "name": "国际现货黄金", "priority": 1, "unit": "USD/oz"},
+    {"symbol": "SHAU", "name": "上海黄金T+D", "priority": 1, "unit": "CNY/g"},
+    {"symbol": "AU9999", "name": "AU9999现货", "priority": 1, "unit": "CNY/g"},
+    {"symbol": "GLD", "name": "SPDR黄金ETF", "priority": 2, "unit": "USD"},
+    {"symbol": "518880", "name": "华安黄金ETF", "priority": 2, "unit": "CNY"},
+    {"symbol": "DXY", "name": "美元指数", "priority": 2, "unit": "index"},
+    {"symbol": "US10Y", "name": "美债10年期收益率", "priority": 3, "unit": "%"},
+    {"symbol": "VIX", "name": "VIX波动率指数", "priority": 3, "unit": "index"}
+  ],
+  "data_sources": {
+    "price_api": "https://api.example.com/gold/price",
+    "news_rss": ["https://finance.example.com/rss/gold.xml"],
+    "calendar_api": "https://api.example.com/economic/calendar"
+  },
+  "notification": {
+    "channels": ["console", "webhook"],
+    "webhook_url": "https://hooks.example.com/gold-alerts"
+  }
+}
