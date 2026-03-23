@@ -1,28 +1,28 @@
 ---
 name: gold-intel-monitor
-description: 实时黄金价格监测与投资决策支持系统。用于追踪黄金价格波动、市场趋势分析和投资时机提醒。支持自定义价格预警、技术分析指标监控和宏观经济数据追踪，帮助投资者做出及时的交易决策。
+description: Real-time gold price monitoring and investment decision support system. Used for tracking gold price fluctuations, market trend analysis, and investment timing alerts. Supports customizable price alerts, technical indicator monitoring, and macroeconomic data tracking to help investors make timely trading decisions.
 ---
 
 # Gold Intelligence Monitor
 
-实时黄金价格监测与投资预警系统。
+Real-time gold price monitoring and investment alert system.
 
-## 功能特点
+## Features
 
-- **实时价格追踪** - 监控国际金价（XAU/USD）及主要货币计价黄金
-- **多级预警系统** - 价格突破、技术指标信号、重大财经事件
-- **技术分析支持** - 关键价位、趋势线、支撑阻力位监控
-- **宏观经济联动** - 美联储政策、美元指数、地缘政治对金价影响
-- **投资决策辅助** - 买入/卖出建议、仓位管理提示
+- **Real-time Price Tracking** - Monitor international gold prices (XAU/USD) and gold denominated in major currencies
+- **Multi-level Alert System** - Price breakouts, technical indicator signals, major economic events
+- **Technical Analysis Support** - Key price levels, trend lines, support and resistance monitoring
+- **Macroeconomic Linkage** - Federal Reserve policy, US Dollar Index, geopolitical impacts on gold prices
+- **Investment Decision Support** - Buy/sell recommendations, position management tips
 
-## 设置
+## Setup
 
-使用前，在 `config.json` 中配置用户投资档案：
+Before use, configure your investment profile in `config.json`:
 
 ```json
 {
   "user_profile": {
-    "name": "投资者名称",
+    "name": "Investor Name",
     "currency": "CNY",
     "timezone": "Asia/Shanghai"
   },
@@ -30,7 +30,7 @@ description: 实时黄金价格监测与投资决策支持系统。用于追踪�
     "holding_cost": 450.00,
     "target_profit": 600.00,
     "stop_loss": 380.00,
-    "position_size": "10克"
+    "position_size": "10 grams"
   },
   "alert_thresholds": {
     "price_change_pct": 2.0,
@@ -38,162 +38,162 @@ description: 实时黄金价格监测与投资决策支持系统。用于追踪�
     "key_levels": [380, 400, 450, 500, 550]
   },
   "watchlist": [
-    {"symbol": "XAUUSD", "name": "国际现货黄金", "priority": 1},
-    {"symbol": "SHAU", "name": "上海黄金T+D", "priority": 1},
-    {"symbol": "GLD", "name": "SPDR黄金ETF", "priority": 2},
-    {"symbol": "DXY", "name": "美元指数", "priority": 2},
-    {"symbol": "US10Y", "name": "美债10年期收益率", "priority": 3}
+    {"symbol": "XAUUSD", "name": "Spot Gold", "priority": 1},
+    {"symbol": "SHAU", "name": "Shanghai Gold T+D", "priority": 1},
+    {"symbol": "GLD", "name": "SPDR Gold ETF", "priority": 2},
+    {"symbol": "DXY", "name": "US Dollar Index", "priority": 2},
+    {"symbol": "US10Y", "name": "US 10Y Treasury Yield", "priority": 3}
   ]
 }
 ```
 
-## 监控工作流
+## Monitoring Workflow
 
-### 1. 设置定时任务
+### 1. Set Up Scheduled Tasks
 
-创建两个监控任务：
+Create two monitoring tasks:
 
-**每日简报（每日3次：开盘、午盘、收盘）**
+**Daily Briefing (3 times daily: Open, Mid-session, Close)**
 ```
-生成市场简报：
-1. 获取过去12小时价格走势
-2. 检查美元指数走势
-3. 查看美联储官员讲话/经济数据发布/X 上面特朗普发言
-4. 提供持仓建议和风险管理
-```
-
-**周度分析（每周一开盘）**
-```
-生成周度展望：
-1. 上周黄金价格回顾
-2. 本周财经日历（美联储会议、非农数据等）
-3. 技术分析（趋势、关键支撑阻力）
-4. 下周交易策略建议
+Generate market briefing:
+1. Get price trends for the past 6 hours
+2. Check US Dollar Index movement
+3. Review Fed officials' speeches/economic data releases
+4. Provide position holding advice and risk management
 ```
 
-### 2. 预警等级
-
-| 等级 | 触发条件 | 响应 |
-|------|----------|------|
-| 🔴 红色 | 价格突破目标止盈位/止损位、单日涨跌>10%、重大地缘冲突 | 立即通知，执行交易决策 |
-| 🟡 黄色 | 价格突破关键整数位、技术指标背离、美联储官员讲话 | 准备交易，密切关注 |
-| 🟢 绿色 | 常规价格波动、正常市场监控 | 定期简报 |
-
-### 3. 预警模板
-
+**Weekly Analysis (Monday market open)**
 ```
-🚨 [预警等级] {预警类型}
-
-💰 品种: {黄金类型}
-📈 当前价格: {价格} ({涨跌幅})
-🎯 关键价位: {突破位}
-
-⚡ 建议操作:
-1. {操作建议1}
-2. {操作建议2}
-3. {操作建议3}
-
-📊 市场分析:
-{简要分析}
-
-🔗 影响因素:
-- 美元指数: {DXY}
-- 美债收益率: {US10Y}
-- 重大事件: {event}
+Generate weekly outlook:
+1. Review last week's gold price performance
+2. This week's economic calendar (Fed meetings, NFP, etc.)
+3. Technical analysis (trends, key support/resistance)
+4. Next week's trading strategy recommendations
 ```
 
-### 4. 简报模板
+### 2. Alert Levels
+
+| Level | Trigger Conditions | Response |
+|-------|-------------------|----------|
+| 🔴 Red | Price breaks target profit/stop-loss levels, daily movement >3%, major geopolitical conflicts | Immediate notification, execute trading decisions |
+| 🟡 Yellow | Price breaks key round numbers, technical divergence, Fed officials' speeches | Prepare to trade, closely monitor |
+| 🟢 Green | Normal price fluctuations, routine market monitoring | Regular briefings |
+
+### 3. Alert Template
 
 ```
-📋 黄金市场简报 - {日期}
+🚨 [Alert Level] {Alert Type}
 
-🎯 市场概况:
-{概述}
+💰 Instrument: {Gold Type}
+📈 Current Price: {Price} ({Change})
+🎯 Key Level: {Breakout Level}
 
-💰 价格行情:
-| 品种 | 价格 | 涨跌 | 关键位 |
-|------|------|------|--------|
-| {名称} | {价格} | {涨跌} | {关键位} |
+⚡ Recommended Actions:
+1. {Action 1}
+2. {Action 2}
+3. {Action 3}
 
-📊 技术分析:
-- 支撑位: {levels}
-- 阻力位: {levels}
-- 趋势: {方向}
+📊 Market Analysis:
+{Brief Analysis}
 
-📅 财经日历:
-- {时间}: {事件} (影响: {高/中/低})
-
-💡 投资建议:
-- 持仓成本: {cost}
-- 当前盈亏: {P&L}
-- 操作建议: {recommendation}
-
-⚠️ 风险提示: {level}
-{风险说明}
+🔗 Influencing Factors:
+- US Dollar Index: {DXY}
+- Treasury Yield: {US10Y}
+- Major Events: {event}
 ```
 
-## 投资策略指南
+### 4. Briefing Template
 
-### 买入信号
-1. 价格回调至重要支撑位（400元/克、380元/克）
-2. 美元指数走弱（DXY<100）
-3. 美联储降息预期升温
-4. 地缘政治风险升级
-5. 技术形态突破（突破整理区间）
+```
+📋 Gold Market Briefing - {Date}
 
-### 卖出信号
-1. 价格涨至目标止盈位（600元/克、550元/克）
-2. 美元指数走强（DXY>105）
-3. 美联储加息预期升温
-4. 技术形态破位（跌破支撑位）
-5. 持仓达到预期收益（止盈）
+🎯 Market Overview:
+{Summary}
 
-### 仓位管理
-| 价格区间 | 仓位建议 | 操作 |
-|----------|----------|------|
-| <380 | 重仓（80%） | 分批买入 |
-| 380-400 | 中等（50%） | 逢低买入 |
-| 400-450 | 轻仓（30%） | 观望为主 |
-| 450-500 | 轻仓（20%） | 止盈减仓 |
-| >550 | 清仓/做空 | 逐步卖出 |
+💰 Price Quotes:
+| Instrument | Price | Change | Key Level |
+|------------|-------|--------|-----------|
+| {Name} | {Price} | {Change} | {Key Level} |
 
-## 信息来源
+📊 Technical Analysis:
+- Support: {levels}
+- Resistance: {levels}
+- Trend: {Direction}
 
-### 官方数据（优先）
-- 上海黄金交易所（SGE）
-- 伦敦金银市场协会（LBMA）
-- 世界黄金协会（WGC）
-- 各国央行黄金储备数据
+📅 Economic Calendar:
+- {Time}: {Event} (Impact: {High/Medium/Low})
 
-### 市场数据
-- Bloomberg/Reuters金价
-- TradingView技术分析
-- Kitco黄金资讯
-- 各大银行黄金报价
+💡 Investment Recommendations:
+- Holding Cost: {cost}
+- Current P&L: {P&L}
+- Recommended Action: {recommendation}
 
-### 宏观指标
-- 美联储利率决议、会议纪要
-- 非农就业数据
-- CPI/PPI通胀数据
-- 美元指数（DXY）
-- 美债收益率
-- VIX波动率指数
+⚠️ Risk Warning: {level}
+{Risk Description}
+```
 
-### 地缘与舆情
-- 地缘政治冲突新闻
-- 央行购金/售金消息
-- 主要机构研报（高盛、摩根大通等）
-- 社交媒体情绪监控
+## Investment Strategy Guide
 
-## 自定义配置
+### Buy Signals
+1. Price retraces to important support levels (400 CNY/g, 380 CNY/g)
+2. US Dollar Index weakens (DXY<100)
+3. Federal Reserve rate cut expectations rise
+4. Geopolitical risks escalate
+5. Technical breakout (breaks consolidation range)
 
-编辑 `config.json` 可自定义：
-- 持仓成本与目标价位
-- 预警阈值（价格变动百分比）
-- 关注的黄金品种（现货、期货、ETF）
-- 关键价位设置
-- 本地时区与货币
+### Sell Signals
+1. Price rises to target profit levels (600 CNY/g, 550 CNY/g)
+2. US Dollar Index strengthens (DXY>105)
+3. Federal Reserve rate hike expectations rise
+4. Technical breakdown (breaks support level)
+5. Position reaches expected profit (take profit)
 
-## 免责声明
+### Position Management
+| Price Range | Position Recommendation | Action |
+|-------------|------------------------|--------|
+| <380 | Heavy (80%) | Scale-in buying |
+| 380-400 | Medium (50%) | Buy on dips |
+| 400-450 | Light (30%) | Wait and see |
+| 450-500 | Light (20%) | Reduce position |
+| >550 | Close/Short | Gradual selling |
 
-本系统仅供参考，不构成投资建议。黄金投资有风险，入市需谨慎。请根据自身风险承受能力做出投资决策。
+## Data Sources
+
+### Official Data (Priority)
+- Shanghai Gold Exchange (SGE)
+- London Bullion Market Association (LBMA)
+- World Gold Council (WGC)
+- Central bank gold reserve data
+
+### Market Data
+- Bloomberg/Reuters Gold Prices
+- TradingView Technical Analysis
+- Kitco Gold News
+- Major bank gold quotes
+
+### Macro Indicators
+- Federal Reserve interest rate decisions, meeting minutes
+- Non-farm payroll data
+- CPI/PPI inflation data
+- US Dollar Index (DXY)
+- Treasury yields
+- VIX Volatility Index
+
+### Geopolitics & Sentiment
+- Geopolitical conflict news
+- Central bank gold purchase/sale news
+- Major institution research reports (Goldman Sachs, JPMorgan, etc.)
+- Social media sentiment monitoring
+
+## Customization
+
+Edit `config.json` to customize:
+- Holding cost and target price levels
+- Alert thresholds (price change percentage)
+- Gold instruments to monitor (spot, futures, ETFs)
+- Key price level settings
+- Local timezone and currency
+
+## Disclaimer
+
+This system is for reference only and does not constitute investment advice. Gold investment involves risks; invest with caution. Please make investment decisions based on your own risk tolerance.
