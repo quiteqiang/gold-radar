@@ -7,13 +7,6 @@ description: Real-time gold price monitoring and investment decision support sys
 
 Real-time gold price monitoring and investment alert system.
 
-## Features
-
-- **Real-time Price Tracking** - Monitor international gold prices (XAU/USD) and gold denominated in major currencies
-- **Multi-level Alert System** - Price breakouts, technical indicator signals, major economic events
-- **Macroeconomic Linkage** - Federal Reserve policy, US Dollar Index, geopolitical impacts on gold prices
-- **Investment Decision Support** - Buy/sell recommendations, position management tips
-
 ## Setup
 
 Before use, configure your investment profile in `config.json`:
